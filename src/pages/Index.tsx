@@ -1,14 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import AboutPreview from "@/components/home/AboutPreview";
+import ServicesGrid from "@/components/home/ServicesGrid";
+import FeaturedWork from "@/components/home/FeaturedWork";
+import DesignProcess from "@/components/home/DesignProcess";
+import Testimonials from "@/components/home/Testimonials";
+import WhyChoose from "@/components/home/WhyChoose";
+import Industries from "@/components/home/Industries";
+import Team from "@/components/home/Team";
+import ClientLogos from "@/components/home/ClientLogos";
+import Awards from "@/components/home/Awards";
+import BlogPreview from "@/components/home/BlogPreview";
+import FAQ from "@/components/home/FAQ";
+import ContactCTA from "@/components/home/ContactCTA";
 
-const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Navbar />
+    <Hero />
+    <ClientLogos />
+    <AboutPreview />
+    <ServicesGrid />
+    <FeaturedWork />
+    <DesignProcess />
+    <Testimonials />
+    <WhyChoose />
+    <Industries />
+    <Team />
+    <Awards />
+    <BlogPreview />
+    <FAQ />
+    <ContactCTA />
+    <Footer />
+  </div>
+);
 
 export default Index;
