@@ -1,7 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, Instagram, Twitter, Linkedin, Dribbble, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { socialLinks } from "@/lib/social-links";
 import { useState } from "react";
 
 const Contact = () => {
