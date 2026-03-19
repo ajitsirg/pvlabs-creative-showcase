@@ -2,7 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Dribbble, Instagram, ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
+import { socialLinks } from "@/lib/social-links";
 
 const team = [
   { name: "Priya Verma", role: "Founder & Creative Director", initials: "PV", bio: "15+ years in design leadership. Previously at Google and IDEO. Passionate about design that drives business growth. Founded PV Labs in 2018 with a vision to make premium design accessible to brands of every size.", specialties: ["Brand Strategy", "Creative Direction", "Design Systems"], quote: "Design isn't decoration — it's the strategy that makes brands unforgettable." },
@@ -62,9 +63,9 @@ const TeamPage = () => (
               </p>
             </div>
 
-            <div className="flex justify-center gap-3 mt-4">
-              {[Linkedin, Twitter, Dribbble].map((Icon, j) => (
-                <a key={j} href="#" className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
+            <div className="flex justify-center gap-2 mt-4">
+              {socialLinks.slice(0, 4).map(({ icon: Icon, label, href }, j) => (
+                <a key={j} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
               ))}
             </div>
           </motion.div>

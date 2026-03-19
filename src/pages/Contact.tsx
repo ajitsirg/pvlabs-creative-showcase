@@ -1,7 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, Instagram, Twitter, Linkedin, Dribbble, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { socialLinks } from "@/lib/social-links";
 import { useState } from "react";
 
 const Contact = () => {
@@ -121,9 +122,9 @@ const Contact = () => {
 
             <div className="glass-card p-5">
               <h3 className="text-sm font-semibold text-foreground mb-3">Follow Us</h3>
-              <div className="flex gap-3">
-                {[Instagram, Twitter, Linkedin, Dribbble].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map(({ icon: Icon, label, href }, i) => (
+                  <a key={i} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all">
                     <Icon size={16} />
                   </a>
                 ))}

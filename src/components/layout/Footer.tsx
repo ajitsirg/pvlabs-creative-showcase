@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowRight, Instagram, Twitter, Linkedin, Dribbble, Heart } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Heart } from "lucide-react";
 import { useState } from "react";
+import { socialLinks } from "@/lib/social-links";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -17,9 +18,9 @@ const Footer = () => {
             <p className="text-background/60 text-sm leading-relaxed mb-6">
               We craft bold digital experiences that elevate brands and captivate audiences. 500+ projects delivered for 200+ clients across 20+ countries.
             </p>
-            <div className="flex gap-3">
-              {[Instagram, Twitter, Linkedin, Dribbble].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/60 hover:bg-primary hover:text-primary-foreground transition-all">
+            <div className="flex flex-wrap gap-2">
+              {socialLinks.map(({ icon: Icon, label, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/60 hover:bg-primary hover:text-primary-foreground transition-all">
                   <Icon size={16} />
                 </a>
               ))}
