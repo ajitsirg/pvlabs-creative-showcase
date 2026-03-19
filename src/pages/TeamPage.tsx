@@ -63,10 +63,11 @@ const TeamPage = () => (
               </p>
             </div>
 
-            <div className="flex justify-center gap-3 mt-4">
-              {[Linkedin, Twitter, Dribbble].map((Icon, j) => (
-                <a key={j} href="#" className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
+            <div className="flex justify-center gap-2 mt-4">
+              {socialLinks.slice(0, 4).map(({ icon: Icon, label, href }, j) => (
+                <a key={j} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
               ))}
+            </div>
             </div>
           </motion.div>
         ))}

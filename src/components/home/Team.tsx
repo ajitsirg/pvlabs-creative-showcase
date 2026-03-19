@@ -40,10 +40,10 @@ const Team = () => (
             <h3 className="font-heading font-bold text-foreground">{m.name}</h3>
             <p className="text-sm text-primary font-medium">{m.role}</p>
             <span className="text-xs text-muted-foreground bg-secondary px-3 py-1 rounded-full inline-block mt-2">{m.specialty}</span>
-            <div className="flex justify-center gap-3 mt-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={16} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={16} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Dribbble size={16} /></a>
+            <div className="flex justify-center gap-2 mt-4">
+              {socialLinks.slice(0, 4).map(({ icon: Icon, label, href }, j) => (
+                <a key={j} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
+              ))}
             </div>
           </motion.div>
         ))}
