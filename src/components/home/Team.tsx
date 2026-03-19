@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Dribbble } from "lucide-react";
+import { socialLinks } from "@/lib/social-links";
 
 const team = [
   { name: "Priya Verma", role: "Founder & Creative Director", initials: "PV", specialty: "Brand Strategy" },
