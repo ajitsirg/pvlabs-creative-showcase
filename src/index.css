@@ -73,6 +73,14 @@
     box-shadow: 0 4px 32px -8px hsl(var(--glow-primary)), 0 1px 2px hsl(240 10% 0% / 0.04);
   }
 
+  .glass-card-dark {
+    background: hsl(240 20% 10% / 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px -8px hsl(263 70% 50% / 0.2);
+  }
+
   .glass-nav {
     @apply bg-background/80 backdrop-blur-xl border-b border-border/50;
   }
@@ -120,8 +128,33 @@
   .float-animation {
     animation: float 3s ease-in-out infinite;
   }
+
+  /* Parallax-style scroll section */
+  .parallax-section {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
 }
