@@ -36,6 +36,7 @@ const navLinks = [
       { label: "FAQ", path: "/faq" },
     ],
   },
+  { label: "Clients", path: "/clients" },
   { label: "Resources", path: "/tools" },
   { label: "Contact", path: "/contact" },
 ];
