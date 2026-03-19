@@ -68,7 +68,6 @@ const TeamPage = () => (
                 <a key={j} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-muted-foreground hover:text-primary transition-colors"><Icon size={16} /></a>
               ))}
             </div>
-            </div>
           </motion.div>
         ))}
       </div>
