@@ -2,7 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Dribbble, Instagram, ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
+import { socialLinks } from "@/lib/social-links";
 
 const team = [
   { name: "Priya Verma", role: "Founder & Creative Director", initials: "PV", bio: "15+ years in design leadership. Previously at Google and IDEO. Passionate about design that drives business growth. Founded PV Labs in 2018 with a vision to make premium design accessible to brands of every size.", specialties: ["Brand Strategy", "Creative Direction", "Design Systems"], quote: "Design isn't decoration — it's the strategy that makes brands unforgettable." },
