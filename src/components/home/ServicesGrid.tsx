@@ -42,7 +42,7 @@ const serviceCategories = [
     desc: "Scroll-stopping content that grows your audience and drives engagement.",
     image: serviceSocial,
     services: [
-      { icon: Share2, name: "Social Media Graphics", desc: "Platform-optimized content that engages" },
+      { icon: Share2, name: "Social Media", desc: "Platform-optimized content that engages" },
       { icon: Megaphone, name: "Ad Creatives", desc: "Conversion-focused marketing materials" },
       { icon: Mail, name: "Email Templates", desc: "Responsive emails that drive opens" },
       { icon: Target, name: "Digital Ads", desc: "High-performing Google & Facebook ads" },
@@ -53,10 +53,10 @@ const serviceCategories = [
     desc: "Tangible design that communicates quality and builds trust.",
     image: servicePackaging,
     services: [
-      { icon: Package, name: "Packaging Design", desc: "Shelf-worthy packaging that sells" },
+      { icon: Package, name: "Packaging", desc: "Shelf-worthy packaging that sells" },
       { icon: Image, name: "Posters & Flyers", desc: "Eye-catching print materials" },
       { icon: BookOpen, name: "Brochures", desc: "Professional layouts that tell your story" },
-      { icon: Flag, name: "Banners & Hoardings", desc: "Large-format designs that grab attention" },
+      { icon: Flag, name: "Banners", desc: "Large-format designs that grab attention" },
     ]
   },
   {
@@ -88,22 +88,22 @@ const ServicesGrid = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Our Services</span>
-        <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 mb-4 text-foreground">
+        <span className="text-primary text-xs font-semibold uppercase tracking-widest">Our Services</span>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-3 text-foreground">
           Everything your brand <span className="gradient-text">needs</span>
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          22+ specialized design services organized across 6 categories to cover every aspect of your brand's visual presence.
+        <p className="text-muted-foreground text-[15px] max-w-xl mx-auto">
+          22+ specialized design services across 6 categories to cover every aspect of your brand.
         </p>
       </motion.div>
 
-      <div className="space-y-12">
+      <div className="space-y-8">
         {serviceCategories.map((cat, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className={`glass-card overflow-hidden grid md:grid-cols-2 ${idx % 2 === 1 ? "md:[direction:rtl] md:[&>*]:[direction:ltr]" : ""}`}
@@ -111,16 +111,18 @@ const ServicesGrid = () => (
             <div className="aspect-[4/3] md:aspect-auto">
               <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" />
             </div>
-            <div className="p-8 flex flex-col justify-center">
-              <h3 className="font-heading text-2xl font-bold mb-2 text-foreground">{cat.title}</h3>
-              <p className="text-muted-foreground text-sm mb-6">{cat.desc}</p>
-              <div className="grid grid-cols-2 gap-3">
+            <div className="p-6 md:p-8 flex flex-col justify-center">
+              <h3 className="font-heading text-xl font-bold mb-1.5 text-foreground">{cat.title}</h3>
+              <p className="text-muted-foreground text-sm mb-5">{cat.desc}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {cat.services.map((s, i) => (
-                  <div key={i} className="flex items-start gap-2 p-2 rounded-xl hover:bg-secondary/60 transition-colors">
-                    <s.icon size={18} className="text-primary mt-0.5 flex-shrink-0" />
+                  <div key={i} className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-muted/60 transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <s.icon size={15} className="text-primary" />
+                    </div>
                     <div>
                       <div className="text-sm font-medium text-foreground">{s.name}</div>
-                      <div className="text-xs text-muted-foreground">{s.desc}</div>
+                      <div className="text-xs text-muted-foreground leading-relaxed">{s.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -130,9 +132,9 @@ const ServicesGrid = () => (
         ))}
       </div>
 
-      <div className="text-center mt-12">
-        <Link to="/services" className="gradient-btn px-8 py-3 text-sm inline-flex items-center gap-2">
-          View All 22+ Services <ArrowRight size={16} />
+      <div className="text-center mt-10">
+        <Link to="/services" className="gradient-btn px-7 py-3 text-sm inline-flex items-center gap-2">
+          View All Services <ArrowRight size={14} />
         </Link>
       </div>
     </div>

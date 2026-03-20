@@ -17,32 +17,31 @@ const Awards = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Recognition</span>
-        <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3 mb-4 text-foreground">
+        <span className="text-primary text-xs font-semibold uppercase tracking-widest">Recognition</span>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-3 text-foreground">
           Awards & <span className="gradient-text">Certifications</span>
         </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto">50+ industry awards recognizing our commitment to design excellence.</p>
+        <p className="text-muted-foreground text-[15px] max-w-lg mx-auto">50+ industry awards recognizing our commitment to excellence.</p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {awards.map((a, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="glass-card p-6 flex items-start gap-4 hover:shadow-xl transition-shadow"
+            transition={{ delay: i * 0.06 }}
+            className="glass-card p-5 flex items-center gap-4 group hover:border-primary/20 transition-all"
           >
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <a.icon size={22} className="text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+              <a.icon size={18} className="text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
             <div>
               <h3 className="font-heading font-bold text-sm text-foreground">{a.title}</h3>
-              <p className="text-xs text-muted-foreground">{a.org}</p>
-              <span className="text-xs text-primary font-medium">{a.year}</span>
+              <p className="text-[11px] text-muted-foreground">{a.org} · {a.year}</p>
             </div>
           </motion.div>
         ))}
