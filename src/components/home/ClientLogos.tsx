@@ -5,12 +5,14 @@ const logos = [
 ];
 
 const ClientLogos = () => (
-  <section className="w-full py-12 overflow-hidden border-y border-border/40 bg-secondary/30">
-    <p className="text-center text-sm text-muted-foreground mb-6 font-medium">Trusted by leading brands worldwide</p>
+  <section className="w-full py-10 overflow-hidden border-y border-border/30 bg-muted/30">
+    <p className="text-center text-xs text-muted-foreground mb-5 font-medium uppercase tracking-widest">
+      Trusted by leading brands worldwide
+    </p>
     <div className="w-full flex whitespace-nowrap">
-      <div className="marquee flex items-center gap-16 pr-16">
+      <div className="marquee flex items-center gap-14 pr-14">
         {[...logos, ...logos].map((l, i) => (
-          <span key={i} className="font-heading text-2xl font-bold text-muted-foreground/25 select-none hover:text-primary/40 transition-colors">{l}</span>
+          <span key={i} className="font-heading text-xl font-bold text-muted-foreground/20 select-none hover:text-primary/30 transition-colors duration-300">{l}</span>
         ))}
       </div>
     </div>
